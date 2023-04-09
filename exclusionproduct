@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define m 1000000007
+int main(){
+   // write your code here
+   int t;
+   cin>>t;
+   while(t--)
+   {
+       int n;
+       cin>>n;
+       vector<int>v(n);
+       for(int i=0;i<n;i++)
+        cin>>v[i];
+       long long pro=1;
+       long long npro;
+       for(int i=0;i<n;i++)
+       {
+           pro=pro*v[i];
+       }
+       vector<long long>v1;
+       for(int i=0;i<n;i++)
+       {
+           npro=(pro%m)*(v[i];
+           v1.push_back(npro);
+       }
+       for(int i=0;i<n;i++)
+        cout<<v1[i]<<" ";
+       cout<<"\n";
+       
+   }
+    return 0;
+}
