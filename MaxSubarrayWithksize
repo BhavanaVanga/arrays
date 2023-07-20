@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void findMaxSubArrayofSizeK(vector<int>&v,int n,int k){
+    
+    int sum=0,tempSum=0;
+   
+        if(n<k)
+         cout<<"-1";
+        for(int i=0;i<k;i++)
+          sum+=v[i];
+        tempSum=sum;
+        for(int i=k;i<n;i++)
+        {
+            tempSum+=v[i]-v[i-k];
+            sum=max(sum,tempSum);
+        }
+     cout<<sum<<" ";
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+    int k;
+    cin>>k;
+    findMaxSubArrayofSizeK(v,n,k);
+    return 0;
+}
